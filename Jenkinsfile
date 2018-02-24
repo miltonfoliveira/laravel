@@ -18,5 +18,6 @@ node('php'){
     
     stage('Docker Ship') {
         sh 'docker push miltonfoliveira/laravel:$BUILD_NUMBER'
+        sh 'docker rmi -f miltonfoliveira/laravel:$BUILD_NUMBER'
     }
 }
